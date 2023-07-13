@@ -1,0 +1,14 @@
+.bannerHome{
+    width: 100%;
+    }
+
+.cardHome{
+    background-color: white;
+    border-radius: 8px;
+}
+
+@media only screen and (max-width: 748px) {
+    .logo {
+      background-color: lightblue;
+    }
+  }

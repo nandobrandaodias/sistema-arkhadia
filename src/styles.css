@@ -1,0 +1,21 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+/* Configurações Gerais */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: black;background-color: #e9e9e9 !important;}
+:root{
+    --primary: #673ab7;
+}
+
+/* Botões */
+
+.btn-primary{
+    background-color: var(--primary);
+    color: white;
+}
+
+.logo{
+    color: white;
+    text-decoration: none;
+}

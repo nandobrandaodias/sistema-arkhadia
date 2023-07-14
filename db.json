@@ -1,0 +1,9 @@
+{
+    "feiticeiro":[
+        {"id": 1, "name": "Alpha" , "type": "A", "age": 18},
+        {"id": 2, "name": "Beta", "type": "B", "age": 17},
+        {"id": 3, "name": "Charlie", "type": "B", "age": 18},
+        {"id": 4, "name": "Delta", "type": "A", "age": 15},
+        {"id": 5, "name": "Esper", "type": "C", "age": 18}
+    ]
+}

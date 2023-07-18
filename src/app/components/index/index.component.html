@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+<div class="container-fluid container-lg mx-auto">
+  <div class="my-5">
+    <h1 class="text-center" style="font-weight: bold; font-size: 2.5rem">
+      Bem vindo à Arkhadia!
+    </h1>
+  </div>
+
+  <div class="bannerIndex">
+    <img
+      src="../assets/imgs/bannerIndex.jpeg"
+      alt=""
+      style="width: 100%; height: 100%"
+    />
+  </div>
+
+  <div class="d-flex my-3" style="justify-content: space-evenly; flex-wrap: wrap;">
+    <div class="col-12 col-lg-3 mb-3 mb-lg-0 text-center cardIndex py-2">
+      <img src="../assets/imgs/icon1.jpg" alt="" class="d-block mx-auto" />
+      <h2>Não tenho conta :(</h2>
+      <button class="btn btn-primary rounded-pill" routerLink="/login">
+        Criar Conta
+      </button>
+    </div>
+
+    <div class="col-12 col-lg-3 text-center cardIndex py-2">
+      <img
+        src="../assets/imgs/icon2.jpg"
+        width="225"
+        alt=""
+        class="d-block mx-auto"
+      />
+      <h2>Já tenho conta!</h2>
+      <button class="btn btn-primary rounded-pill" routerLink="/login">
+        Acessar Conta
+      </button>
+    </div>
+  </div>
+</div>
+
+<footer class="text-center py-2 mt-5 mat-toolbar mat-primary text-white">
+  <span style="font-weight: bold; font-size: 1rem"
+    >Todos os direitos reservados, 2023.</span
+  >
+</footer>

@@ -1,0 +1,28 @@
+<main>
+  <div class="flex flex-wrap justify-between p-4">
+    <h2 class="text-3xl">Personagens</h2>
+    <button class="btn btn-primary" routerLink='./criacao'>
+        Criar Personagem
+    </button>
+  </div>
+
+  <section>
+    <nz-list nzItemLayout="horizontal" [nzLoading]="loading">
+      @for (item of data; track item) {
+      <nz-list-item class="hover:bg-zinc-200 cursor-pointer" style="padding: 12px 16px;">
+        <nz-list-item-meta routerLink="/sheet/{{item.id ?? 0}}" 
+          nzAvatar="{{item.image ?? 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'}}"
+          nzDescription="{{'Classe: ' + (item.class ?? 'Nada') + ', Nível: ' + (item.level ?? '1') + ', XP: ' + (item.xp ?? 0) }}"
+          nzTitle="{{item.name ?? 'Default'}}">
+        </nz-list-item-meta>     
+        <ul nz-list-item-actions>
+          <nz-list-item-action><a onclick="deleteCharacter()">Excluir</a></nz-list-item-action>
+      </ul>
+      </nz-list-item>
+      } 
+      @if (data.length === 0) {
+      <nz-list-empty />
+      }
+    </nz-list>
+  </section>
+</main>

@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/ng-zorro-antd/ng-zorro-antd.min.css";
+
+
+.form-group{
+    margin: 1rem auto;
+}
+
+.form-group label{
+    display: block;
+    margin-bottom: .25rem;
+    padding-left: .25rem;
+}  
+.form-group input, .form-group select, .form-group textarea{
+    width: 100%;
+    display: block;
+    padding: .5rem .5rem;
+}
+
+.btn{
+    padding: 12px 18px;
+    text-align: center;
+    border-radius: .75rem;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.btn-primary{
+    background-color: rgb(39, 78, 187);
+    color: white;
+}
+
+.btn-primary:hover{
+    background-color: rgb(14, 43, 122);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

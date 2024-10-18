@@ -5,6 +5,7 @@ import { RouterModule } from "@angular/router";
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
 
 @NgModule({
     imports: [
@@ -14,7 +15,7 @@ import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
       CommonModule,
       NzLayoutModule,
       NzBreadCrumbModule,
-      NzPageHeaderModule  
+      NzPageHeaderModule
     ],
     exports: [
       RouterModule,
@@ -23,8 +24,8 @@ import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
       CommonModule,
       NzLayoutModule,
       NzBreadCrumbModule,
-      NzPageHeaderModule
+      NzPageHeaderModule,
+      NzMenuModule
     ]
   })
   export class SharedModule { }
-  

@@ -12,7 +12,7 @@
       <nz-list-item class="hover:bg-zinc-200 cursor-pointer" style="padding: 12px 16px;">
         <nz-list-item-meta routerLink="/sheet/{{item.id ?? 0}}" 
           nzAvatar="{{item.image ?? 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'}}"
-          nzDescription="{{'Classe: ' + (item.class ?? 'Nada') + ', Nível: ' + (item.level ?? '1') + ', XP: ' + (item.xp ?? 0) }}"
+          nzDescription="{{'Classe: ' + (item.classname ?? 'Nada') + ', Nível: ' + (item.level ?? '1') + ', XP: ' + (item.xp ?? 0) }}"
           nzTitle="{{item.name ?? 'Default'}}">
         </nz-list-item-meta>     
         <ul nz-list-item-actions>

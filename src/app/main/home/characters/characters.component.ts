@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
-import { SharedModule } from '../../../../shared/services/shared.module';
 import { NzListModule } from 'ng-zorro-antd/list';
+import { SharedModule } from '../../../shared/services/shared.module';
+import { SheetsService } from '../../../shared/services/sheets.service';
 
 
 
@@ -13,9 +14,28 @@ import { NzListModule } from 'ng-zorro-antd/list';
   styleUrl: './characters.component.css'
 })
 export class CharactersComponent {
+  constructor(
+    private sheetsService: SheetsService
+  ) {}
   loading = false;
-  data:any = [{},{},{}];
+  data: any = [];
 
+
+  ngOnInit(){
+    this.getCharactersList()
+  }
+
+
+  getCharactersList(){
+    this.sheetsService.getAllSheets().subscribe({
+      next: (res) =>{
+        this.data = res
+      },
+      error: (error)=>{
+        console.log(error)
+      }
+    })
+  }
 
   editCharacter(){}
   deleteCharacter(){}

@@ -1,22 +1,25 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './modules/login/login/login.component';
-import { SheetComponent } from './modules/sheets/sheet/sheet.component';
+import { SheetComponent } from './sheets/sheet/sheet.component';
+import { LoginComponent } from './login/login/login.component';
+import { authGuard } from './auth/auth.guard';
 
 export const routes: Routes = [
-    {
-        path: '',
-        loadChildren: ()=>import('./modules/home/home/home.routes').then(m=>m.routes)
-    },
-    {
-        path: 'sheet/:id',
-        component: SheetComponent
-    },
-    {
-        path: 'login',
-        component: LoginComponent
-    },
-    {
-        path: '*',
-        redirectTo: ''
-    }
+  {
+    path: '',
+    loadChildren: () => import('./main/home/home.routes').then((m) => m.routes),
+    canActivate: [authGuard],
+  },
+  {
+    path: 'sheet/:id',
+    component: SheetComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: '*',
+    redirectTo: '',
+  },
 ];

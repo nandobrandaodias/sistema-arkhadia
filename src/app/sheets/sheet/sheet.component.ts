@@ -14,24 +14,22 @@ export class SheetComponent implements AfterViewInit {
   tabs = [{title:'Tab 1', content:"Conteúdo 1"}, {title:'Tab 2', content:"Conteúdo 2"}];
   selectedIndex = 0;
   menu: number = 1;
-  quill: any
-  sheetForm: any
+  sheetForm: FormGroup = new FormGroup({
+    name: new FormControl('Personagem', Validators.required),
+    class: new FormControl('Guerreiro', Validators.required),
+    xp: new FormControl(400, Validators.required),
+    level: new FormControl(3, Validators.required),
+    imageUrl: new FormControl(''),
+    description: new FormControl(''),
+    tabs: new FormControl([])
+  });
 
   switchMenu(menu: number){
     this.menu = menu;
   }
 
   ngOnInit(){
-    this.sheetForm = new FormGroup({
-      name: new FormControl('Personagem', Validators.required),
-      class: new FormControl('Guerreiro', Validators.required),
-      xp: new FormControl(400, Validators.required),
-      level: new FormControl(3, Validators.required),
-      image: new FormControl(''),
-      description: new FormControl(''),
-    });
-
-    this.sheetForm.get('name').disable()
+    this.sheetForm.controls['name'].disable()
   }
 
   ngAfterViewInit(){
@@ -41,8 +39,15 @@ export class SheetComponent implements AfterViewInit {
   closeTab({ index }: { index: number }): void {
     this.tabs.splice(index, 1);
   }
+
   newTab(): void {
     this.tabs.push({title:'New Tab', content:"Novo conteúdo!"});
     this.selectedIndex = this.tabs.length;
+  }
+
+  updateSheet(){
+    this.sheetForm.value.tabs = this.tabs
+    console.log('update')
+    console.log(this.sheetForm.value)
   }
 }

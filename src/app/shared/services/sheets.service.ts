@@ -11,7 +11,7 @@ export class SheetsService {
   createSheet(data: any){
     return this.httpClient.post('http://localhost:3000/character', data);
   }
-  
+
   getSheet(id: any){
     return this.httpClient.get(`http://localhost:3000/character/${id}`);
   }
@@ -20,11 +20,11 @@ export class SheetsService {
     return this.httpClient.get(`http://localhost:3000/character`);
   }
 
-  updateSheet(data: any){
-    // return this.httpClient.post('/api/login', loginForm);
+  updateSheet(id: string, data: any){
+    return this.httpClient.patch(`/api/character/${id}`, data);
   }
 
-  deleteSheet(id: any){
-    // return this.httpClient.post('/api/login', loginForm);
+  deleteSheet(id: string){
+    return this.httpClient.delete('/api/character');
   }
 }

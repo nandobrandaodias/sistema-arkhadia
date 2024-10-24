@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SharedModule } from '../../shared/services/shared.module';
-import { RegisterService } from '../../auth/register.service';
 import { AuthService } from '../../auth/auth.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { Router } from '@angular/router';
+import { UserService } from '../../shared/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   constructor(
-    private registerService: RegisterService,
+    private userService: UserService,
     private authService: AuthService,
     private message: NzMessageService,
     private router: Router
@@ -39,7 +39,7 @@ export class LoginComponent {
 
   submitCadastro() {
     if (!this.cadastroForm.valid) window.alert('Formulário Inválido');
-    this.registerService.register(this.cadastroForm.value).subscribe({
+    this.userService.register(this.cadastroForm.value).subscribe({
       next: () => {
         this.message.success('Cadastro realizado com sucesso!');
         this.login = true;
@@ -54,9 +54,10 @@ export class LoginComponent {
     if (!this.loginForm.valid) window.alert('Formulário Inválido');
     this.authService.login(this.loginForm.value).subscribe({
       next: (res) => {
-        let token = JSON.stringify(res)
-        this.authService.saveToken(token)
-        this.router.navigate(['/'])
+        // let token = JSON.stringify(res)
+        // this.authService.saveToken(token)
+        // this.router.navigate(['/'])
+        console.log(res)
       },
       error: (error) => {
         console.log(error);

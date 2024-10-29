@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SharedModule } from '../../../shared/services/shared.module';
-import { SheetsService } from '../../../shared/services/sheets.service';
 import { Router } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { CharactersService } from '../../../shared/services/character.service';
 
 @Component({
   selector: 'app-form-character',
@@ -22,7 +22,7 @@ export class FormCharacterComponent {
   });
 
   constructor(
-    private sheetsService: SheetsService,
+    private charactersService: CharactersService,
     private router: Router,
     private message: NzMessageService
   ) {}
@@ -33,7 +33,7 @@ export class FormCharacterComponent {
 
   onSubmit() {
     try {
-      this.sheetsService.createSheet(this.form.value).subscribe({
+      this.charactersService.createCharacter(this.form.value).subscribe({
         next: () => {
           this.message.success('Cadastro realizado com sucesso!');
           this.router.navigate(['/personagens']);

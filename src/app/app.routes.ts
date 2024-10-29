@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { SheetComponent } from './sheets/sheet/sheet.component';
 import { LoginComponent } from './login/login/login.component';
 import { authGuard } from './auth/auth.guard';
+import { CharacterComponent } from './character/character/character.component';
 
 export const routes: Routes = [
   {
@@ -10,8 +10,8 @@ export const routes: Routes = [
     loadChildren: () => import('./main/home/home.routes').then((m) => m.routes),
   },
   {
-    path: 'sheet/:id',
-    component: SheetComponent,
+    path: 'character/:id',
+    component: CharacterComponent,
     canActivate: [authGuard],
   },
   {

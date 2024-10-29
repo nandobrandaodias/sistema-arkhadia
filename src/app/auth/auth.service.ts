@@ -35,7 +35,6 @@ export class AuthService {
   }
 
   login(loginForm: any) {
-    // return this.httpClient.post('http://localhost:3000/login', loginForm, {headers: this.headers});
-    return this.httpClient.get('https://jsonplaceholder.typicode.com/posts')
+    return this.httpClient.post('http://localhost:3000/login', loginForm, {headers: this.headers});
   }
 }

@@ -8,6 +8,8 @@ import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzMessageModule } from 'ng-zorro-antd/message';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 
 
@@ -22,7 +24,9 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
       NzPageHeaderModule,
       NzMenuModule,
       NzTabsModule,
-      NzMessageModule
+      NzMessageModule,
+      NzButtonModule,
+      NzIconModule
     ],
     exports: [
       RouterModule,
@@ -34,7 +38,9 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
       NzPageHeaderModule,
       NzMenuModule,
       NzTabsModule,
-      NzMessageModule
+      NzMessageModule,
+      NzButtonModule,
+      NzIconModule
     ]
   })
   export class SharedModule { }

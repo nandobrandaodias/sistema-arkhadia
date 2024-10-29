@@ -54,10 +54,9 @@ export class LoginComponent {
     if (!this.loginForm.valid) window.alert('Formulário Inválido');
     this.authService.login(this.loginForm.value).subscribe({
       next: (res) => {
-        // let token = JSON.stringify(res)
-        // this.authService.saveToken(token)
-        // this.router.navigate(['/'])
-        console.log(res)
+        let token = JSON.stringify(res)
+        this.authService.saveToken(token)
+        this.router.navigate(['/'])
       },
       error: (error) => {
         console.log(error);

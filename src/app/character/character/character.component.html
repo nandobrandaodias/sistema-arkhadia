@@ -1,4 +1,10 @@
 <main class="w-screen h-screen">
+  <div class="absolute bottom-8 right-8">
+    <button nz-button nzSize='large'
+     [nzLoading]="loading" nzType="primary" nzShape="circle" (click)="updateCharacter()">
+      <span nz-icon nzType="save" nzTheme="outline"></span>
+    </button>
+  </div>
   <nz-layout class="w-full h-full">
     <nz-layout>
       <nz-sider nzWidth="200px" nzTheme="dark">
@@ -32,9 +38,9 @@
                     />
                   </div>
                   <div class="form-group w-full lg:w-2/4 px-4">
-                    <label for="class">Classe</label>
+                    <label for="classname">Classe</label>
                     <input
-                      formControlName="class"
+                      formControlName="classname"
                       class="border-2 rounded-lg border-zinc-400"
                       type="text"
                     />
@@ -56,7 +62,7 @@
                     />
                   </div>
                   <div class="form-group w-full px-4">
-                    <label for="description ">Descrição</label>
+                    <label for="description">Descrição</label>
                     <textarea
                       formControlName="description"
                       class="border-2 rounded-lg border-zinc-400 h-48"
@@ -72,16 +78,15 @@
                   (nzAdd)="newTab()"
                   (nzClose)="closeTab($event)"
                 >
-                  @for (tab of tabs; track tab) {
-                  <nz-tab nzClosable [nzTitle]="tab.title">
+                  @for (tab of sheetForm.value.tabs; track tab) {
+                  <nz-tab nzClosable [nzTitle]="tab.name">
                     <textarea name="contentArea" id="contentArea"
-                    [value]="tab.content"
+                    [value]="tab.content" (change)="updateTabValue($event, tab)"
                     class="w-full h-72 border-2 border-zinc-400 rounded-lg p-2">
                     </textarea>
                   </nz-tab>
                   }
                 </nz-tabset>
-                <button (click)="updateSheet()">Atualizar</button>
               </div>
             </section>
           </form>

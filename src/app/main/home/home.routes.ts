@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home.component';
-import { CharactersComponent } from './characters/characters.component';
 import { AccountComponent } from './account/account.component';
 import { FormCharacterComponent } from './form-character/form-character.component';
+import { ListCharactersComponent } from './list-characters/list-characters.component';
 
 export const routes: Routes = [
   {
@@ -11,15 +11,11 @@ export const routes: Routes = [
     children: [
       {
         path: 'personagens',
-        component: CharactersComponent,
+        component: ListCharactersComponent,
       },
       {
         path: 'personagens/criacao',
         component: FormCharacterComponent,
-      },
-      {
-        path: 'personagem/:id',
-        component: CharactersComponent,
       },
       {
         path: 'conta',

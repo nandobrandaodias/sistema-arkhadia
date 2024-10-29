@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sheetsManager": {
+    "charactersManager": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:class": {
@@ -38,7 +38,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/sheets-manager",
+            "outputPath": "dist/characters-manager",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -89,10 +89,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "sheetsManager:build:production"
+              "buildTarget": "charactersManager:build:production"
             },
             "development": {
-              "buildTarget": "sheetsManager:build:development"
+              "buildTarget": "charactersManager:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -100,7 +100,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "sheetsManager:build"
+            "buildTarget": "charactersManager:build"
           }
         },
         "test": {
